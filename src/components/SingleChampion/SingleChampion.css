@@ -12,15 +12,17 @@
     justify-content: center;
 }
 
-.championname {
+.singlechampionname {
     font-weight: bold;
     font-size: 30px;
+    text-align: center;
+    border-bottom: 1px solid black;
 }
 
 .championblurb {
     font-size: 20px;
     text-align: center;
-    width: 50%;
+    width: 30%;
 }
 
 .champcontainer {
@@ -40,7 +42,8 @@
 }
 
 .championchartbody {
-    width: 100%;
+    width: 80%;
+    font-size: 18px;
 }
 
 .championchartbody tr {
@@ -57,5 +60,9 @@
 }
 
 .championchartbody tr > td{
-    margin-right: 50px;
+    margin-right: 20px;
+}
+
+.championchartbody > h4 {
+    text-align: center;
 }

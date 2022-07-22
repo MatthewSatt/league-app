@@ -27,3 +27,10 @@
 .championtitle {
     text-align: center;
 }
+
+.championimage:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+    z-index: 1;
+    cursor: pointer
+}

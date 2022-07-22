@@ -36,16 +36,15 @@ function SingleChampion() {
     <div className="singlechampion">
       {singleChampData.length > 0 &&
         singleChampData.map((champion) => (
-          <div className="singlechampdetails">
+            <div className="singlechampdetails">
+              <p className="singlechampionname">{champion.name}</p>
             <div className="champcontainer">
-            <p className="championname">{champion.name}</p>
-            <p className="championblurb">{champion.blurb}</p>
             <img
               width="300"
-              className="championimage"
               height="300"
               src={`http://ddragon.leagueoflegends.com/cdn/12.13.1/img/champion/${champion.image.full}`}
               />
+            <p className="championblurb">{champion.blurb}</p>
               </div>
             <table className="championchart">
                 <tbody className="championchartbody">

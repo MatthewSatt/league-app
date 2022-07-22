@@ -42,6 +42,7 @@ function ChampionSearch() {
               <img
                 width="135"
                 height="135"
+                className="championimage"
                 src={`http://ddragon.leagueoflegends.com/cdn/12.13.1/img/champion/${champion.image.full}`}
                 />
                 </Link>
