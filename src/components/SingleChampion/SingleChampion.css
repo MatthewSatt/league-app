@@ -1,68 +1,88 @@
 .singlechampion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .singlechampiondetails {
-    display: inline;
-    background-color: red;
-    align-items: center;
-    justify-content: center;
+  background-color: red;
+  margin: 0;
+}
+
+.backtochampions {
+  position: absolute;
+  border-radius: 2px;
+  height: 30px;
+  border: 1px solid;
+  border-color: darkgray;
+  top: 85px;
+  left: 10px;
+  margin: 0;
 }
 
 .singlechampionname {
-    font-weight: bold;
-    font-size: 30px;
-    text-align: center;
-    border-bottom: 1px solid black;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  border-bottom: 1px solid black;
 }
 
 .championblurb {
-    font-size: 20px;
-    text-align: center;
-    width: 30%;
+  font-size: 20px;
+  text-align: center;
+  font-style: italic;
+  width: 30%;
 }
 
 .champcontainer {
-    margin: 30px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.singlechampionimage {
+  border-radius: 10px;
+  height: auto;
 }
 
 .championchart {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* width: 100%;
     height: 100%; */
 }
 
 .championchartbody {
-    width: 80%;
-    font-size: 18px;
+  width: 80%;
+  font-size: 18px;
+  margin-bottom: 30px;
 }
 
 .championchartbody tr {
-    border-bottom: 1px solid rgb(145, 145, 145);
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-    margin: 5px;
-
+  border-bottom: 1px solid rgb(145, 145, 145);
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
+  margin: 5px;
 }
 
-.championchartbody tr > td{
-    margin-left: 20px;
+.championchartbody tr > td {
+  margin-left: 20px;
 }
 
-.championchartbody tr > td{
-    margin-right: 20px;
+.championchartbody tr > td {
+  margin-right: 20px;
 }
 
 .championchartbody > h4 {
-    text-align: center;
+  text-align: center;
+}
+
+.backtochampions:hover {
+    background-color: darkgray;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
 }

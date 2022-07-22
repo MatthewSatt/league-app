@@ -30,10 +30,11 @@ function SingleChampion() {
       });
   }, []);
 
-  console.log(name);
-
   return (
     <div className="singlechampion">
+      <button className="backtochampions">
+        All Champions
+      </button>
       {singleChampData.length > 0 &&
         singleChampData.map((champion) => (
             <div className="singlechampdetails">
@@ -42,6 +43,7 @@ function SingleChampion() {
             <img
               width="300"
               height="300"
+              className="singlechampionimage"
               src={`http://ddragon.leagueoflegends.com/cdn/12.13.1/img/champion/${champion.image.full}`}
               />
             <p className="championblurb">{champion.blurb}</p>
