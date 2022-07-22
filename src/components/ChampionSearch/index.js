@@ -3,6 +3,7 @@ import { useState, useEffect, useId } from "react";
 import axios from "axios";
 import "./ChampionSearch.css";
 import { Link } from "react-router-dom";
+import Searchbar from "../Searchbar";
 
 function ChampionSearch() {
   const API_KEY = "RGAPI-8ce94934-563b-4085-97c3-b9a4bfdce3b7";
@@ -12,8 +13,8 @@ function ChampionSearch() {
   const apiCallString = "https://na1.api.riotgames.com";
   useEffect(() => {
     axios
-      .get(
-        `http://ddragon.leagueoflegends.com/cdn/12.13.1/data/en_US/champion.json`
+    .get(
+      `http://ddragon.leagueoflegends.com/cdn/12.13.1/data/en_US/champion.json`
       )
       .then((res) => {
         const array = [];
@@ -28,10 +29,13 @@ function ChampionSearch() {
         setChampData([]);
         console.log(err);
       });
-  }, []);
+    }, []);
 
-  return (
-    <>
+    return (
+      <>
+      <div className="sortingoptions">
+      <Searchbar />
+      </div>
       <h5 className="championtitle">League of Legends Champion Search</h5>
       <div className="championsearch">
         {champData.length > 0 &&

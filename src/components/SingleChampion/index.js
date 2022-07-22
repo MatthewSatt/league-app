@@ -1,14 +1,17 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 import "./SingleChampion.css"
 
 function SingleChampion() {
   const API_KEY = "RGAPI-8ce94934-563b-4085-97c3-b9a4bfdce3b7";
   const { name } = useParams();
+  const history = useHistory();
   const [singleChampData, setSingleChampData] = useState({});
   const apiCallString = "https://na1.api.riotgames.com";
+
+
   useEffect(() => {
     axios
       .get(
@@ -30,9 +33,16 @@ function SingleChampion() {
       });
   }, []);
 
+  const backToChamps = (e) => {
+    e.preventDefault();
+    history.push("/champions");
+  }
+
   return (
     <div className="singlechampion">
-      <button className="backtochampions">
+      <button
+      onClick={backToChamps}
+      className="backtochampions">
         All Champions
       </button>
       {singleChampData.length > 0 &&
