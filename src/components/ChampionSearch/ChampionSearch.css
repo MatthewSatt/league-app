@@ -1,0 +1,29 @@
+.championsearch {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa;
+}
+
+
+.champion-list {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: row;
+    justify-content: center;
+}
+
+
+.championname {
+    font-weight: bold;
+}
+
+.championtitle {
+    text-align: center;
+}

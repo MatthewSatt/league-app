@@ -1,0 +1,26 @@
+.navbar {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    border-radius: 0;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    margin-bottom: 0;
+    padding: .5rem 1rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar .navlink {
+    color: #403434;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .navlink:hover {
+    color: #403434;
+    background-color: #e9ecef;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}

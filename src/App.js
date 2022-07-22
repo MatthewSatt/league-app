@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import "./App.css";
+import PlayerSearch from "./components/PlayerSearch";
+import ChampionSearch from "./components/ChampionSearch";
+import NavBar from "./components/NavBar";
+import SingleChampion from "./components/SingleChampion";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <NavBar />
+      <Switch>
+
+        <Route path="/players">
+          <PlayerSearch />
+        </Route>
+
+        <Route path="/champions">
+          <ChampionSearch />
+        </Route>
+
+        <Route path="/champion/:name">
+          <SingleChampion />
+        </Route>
+
+
+      </Switch>
+    </BrowserRouter>
   );
 }
 
