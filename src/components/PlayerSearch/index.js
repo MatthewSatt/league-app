@@ -3,7 +3,7 @@ import axios from "axios";
 import "./PlayerSearch.css"
 
 function PlayerSearch() {
-  const API_KEY = "RGAPI-8ce94934-563b-4085-97c3-b9a4bfdce3b7";
+  const API_KEY = "RGAPI-acd0e46b-9e1f-4c3e-a1ad-66632922a313";
   const [searchText, setSearchText] = useState("");
   const [playerData, setPlayerData] = useState({});
 
@@ -13,6 +13,7 @@ function PlayerSearch() {
         `https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${searchText}?api_key=${API_KEY}`
       )
       .then((res) => {
+        console.log("player data", res.data)
         setPlayerData(res.data);
       })
       .catch((err) => {

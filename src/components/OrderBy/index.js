@@ -5,6 +5,7 @@ import "./OrderBy.css";
 
 function OrderBy() {
   const [defaultChamps, setDefaultChamps] = useState([]);
+ const [active, setActive] = useState(false);
 
   useEffect(() => {
     axios
@@ -64,6 +65,63 @@ function OrderBy() {
     setDefaultChamps(copy);
   }
 
+  const sortByArmorPerLevel = () => {
+    const copy = defaultChamps;
+    copy.sort(function (a, b) {
+      const armorA = a.stats.armorperlevel;
+      const armorB = b.stats.armorperlevel;
+      if (armorA < armorB) {
+        return 1;
+      }
+      if (armorA > armorB) {
+        return -1;
+      }
+      if(armorA === armorB){
+        return 0;
+      }
+    });
+    console.log(copy)
+    setDefaultChamps(copy);
+  }
+
+  const sortByAttackDamage = () => {
+    const copy = defaultChamps;
+    copy.sort(function (a, b) {
+      const attackDamageA = a.stats.attackdamage;
+      const attackDamageB = b.stats.attackdamage;
+      if (attackDamageA < attackDamageB) {
+        return 1;
+      }
+      if (attackDamageA > attackDamageB) {
+        return -1;
+      }
+      if(attackDamageA === attackDamageB){
+        return 0;
+      }
+    });
+    console.log(copy)
+    setDefaultChamps(copy);
+  }
+
+  const sortByAttackSpeed = () => {
+    const copy = defaultChamps;
+    copy.sort(function (a, b) {
+      const attackSpeedA = a.stats.attackspeed;
+      const attackSpeedB = b.stats.attackspeed;
+      if (attackSpeedA < attackSpeedB) {
+        return 1;
+      }
+      if (attackSpeedA > attackSpeedB) {
+        return -1;
+      }
+      if(attackSpeedA === attackSpeedB){
+        return 0;
+      }
+    });
+    console.log(copy)
+    setDefaultChamps(copy);
+  }
+
   return (
     <div className="orderby">
       <h5 className="championrankingtitle">Champion Ranking</h5>
@@ -71,11 +129,11 @@ function OrderBy() {
       <div className="labels">
         <div onClick={(e) => sortByName(defaultChamps, "name")}>Name</div>
         <div onClick={(e) => sortByArmor()}>Armor</div>
-        <div>Armor/Level</div>
-        <div>Attack Damage</div>
+        <div onClick={(e) => sortByArmorPerLevel()}>Armor/Level</div>
+        <div onClick={(e) => sortByAttackDamage()}>Attack Damage</div>
         <div>Attack Damage Per Level</div>
         <div>Attack Range</div>
-        <div>Attack Speed</div>
+        <div onClick={(e) => sortByAttackSpeed()}>Attack Speed</div>
         <div>Attack Speed Per Level</div>
         <div>Crit Chance</div>
         <div>Crit Chance Per Level</div>
