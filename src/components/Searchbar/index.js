@@ -5,6 +5,8 @@ import axios from "axios";
 
 function Searchbar({ search, setSearch, filteredChamps, setFilteredChamps }) {
   const [controlledChampions, setControlledChampions] = useState([]);
+  const [armorAverage, setArmorAverage] = useState(0);
+  
 
 
   useEffect(() => {
@@ -47,7 +49,7 @@ function Searchbar({ search, setSearch, filteredChamps, setFilteredChamps }) {
     <div className="searchbar">
       <input
         type="text"
-        placeholder="Search by champion name"
+        placeholder="Search By Champion Name"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />

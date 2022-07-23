@@ -69,11 +69,11 @@ function ChampionSearch() {
                 </Link>
             </div>
           ))}
-          {filteredChamps.length === 0 && search.length !== 0 &&
-          <p className="noresults">No Champions Found</p>
-          }
       </div>
 
+          {filteredChamps.length === 0 && search.length !== 0 &&
+          <h2 className="noresults">No Champions Found</h2>
+          }
 
     </>
   );

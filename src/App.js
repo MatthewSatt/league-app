@@ -4,6 +4,7 @@ import PlayerSearch from "./components/PlayerSearch";
 import ChampionSearch from "./components/ChampionSearch";
 import NavBar from "./components/NavBar";
 import SingleChampion from "./components/SingleChampion";
+import OrderBy from "./components/OrderBy";
 
 function App() {
   return (
@@ -21,6 +22,10 @@ function App() {
 
         <Route path="/champion/:name">
           <SingleChampion />
+        </Route>
+
+        <Route path="/ranking">
+          <OrderBy />
         </Route>
 
 

@@ -11,6 +11,10 @@ function NavBar() {
         <Link className="navlink" to="/champions">
             Champions
         </Link>
+
+        <Link className="navlink" to="/ranking">
+            Champion Stats
+        </Link>
     </div>
   )
 }

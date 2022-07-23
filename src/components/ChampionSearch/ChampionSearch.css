@@ -34,3 +34,10 @@
     z-index: 1;
     cursor: pointer
 }
+
+.noresults {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    height: 100%;
+}

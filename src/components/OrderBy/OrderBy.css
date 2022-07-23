@@ -1,0 +1,27 @@
+.orderby {
+    width: 100%;
+    height: 100%;
+}
+
+.championrankingtitle{
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.labels{
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+}
+
+.labels > div{
+    text-align: center;
+    padding: 5px;
+}
+
+.championcontainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
