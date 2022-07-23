@@ -1,18 +1,47 @@
 import React from "react";
 import "./Searchbar.css";
-import { useEffect } from "react";
-function Searchbar({ setSearchResult, searchResult, search, setSearch }) {
+import { useEffect, useState} from "react";
+import axios from "axios";
 
-//   useEffect(() => {
-//     if (search.length < 1) {
-//       return;
-//     }
-//   }, [search]);
+function Searchbar({ search, setSearch, filteredChamps, setFilteredChamps }) {
+  const [controlledChampions, setControlledChampions] = useState([]);
 
-//   useEffect(() => {
-//     setSearchResult(array);
-//   }, [search]);
 
+  useEffect(() => {
+    axios
+    .get(
+      `http://ddragon.leagueoflegends.com/cdn/12.13.1/data/en_US/champion.json`
+      )
+      .then((res) => {
+        const array = [];
+        for (let key in res.data.data) {
+          const championObj = {};
+          array.push(res.data.data[key]);
+        }
+        setControlledChampions(array);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }, []);
+
+    useEffect(() => {
+      if (search.length === 0) {
+        setFilteredChamps([]);
+      }
+      let copy = search.toLowerCase()
+      if(search.length > 0) {
+      const array = [];
+      for (let i = 0; i < controlledChampions.length; i++) {
+        const champion = controlledChampions[i];
+        if (champion.name.toLowerCase().includes(copy)) {
+          array.push(champion);
+        }
+      }
+      console.log(array)
+      setFilteredChamps(array);
+      }
+    }, [search])
 
   return (
     <div className="searchbar">
@@ -20,7 +49,7 @@ function Searchbar({ setSearchResult, searchResult, search, setSearch }) {
         type="text"
         placeholder="Search by champion name"
         value={search}
-        onchange={(e) => setSearch(e.target.value)}
+        onChange={(e) => setSearch(e.target.value)}
       />
     </div>
   );
