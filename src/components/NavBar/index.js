@@ -4,19 +4,18 @@ import "./NavBar.css"
 import { Link } from 'react-router-dom'
 
 function NavBar() {
-  const darkTheme = useTheme();
-  const toggleTheme = useThemeUpdate();
-  const themeStyles = {
-    backgroundColor: darkTheme ? '#333' : '#CCC',
-    color: darkTheme ? '#CCC' : '#333',
+  // const darkTheme = useTheme();
+  // const toggleTheme = useThemeUpdate();
+  // const themeStyles = {
+  //   backgroundColor: darkTheme ? '#333' : '#CCC',
+  //   color: darkTheme ? '#CCC' : '#333',
     // padding: "2rem",
     // margin: "2rem"
-
-  }
+  // }
   return (
     <div className='navbar'>
-      <button onClick={toggleTheme}>Toggle Theme</button>
-      <div style={themeStyles}>Function Theme</div>
+      {/* <button onClick={toggleTheme}>Toggle Theme</button>
+      <div style={themeStyles}>Function Theme</div> */}
         <Link className="navlink" to="/players">
             Players
         </Link>
@@ -32,6 +31,3 @@ function NavBar() {
 }
 
 export default NavBar
-
-
-
