@@ -60,7 +60,7 @@ function SingleChampion() {
               </div>
             <table className="championchart">
                 <tbody className="championchartbody">
-                    <h4>Stats</h4>
+                    <h4>Champion Stats</h4>
                     <tr>
                         <td>Armor:</td>
                         <td>{champion.stats.armor}</td>
