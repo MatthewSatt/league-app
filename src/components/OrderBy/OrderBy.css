@@ -1,13 +1,11 @@
-.labels {
+/* .labels {
     display: flex;
     flex-direction: row;
     text-align: center;
-    /* width: 90%; */
+    width: 90%;
+} */
 
-
-}
-
-.labels div {
+/* .labels div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,4 +27,33 @@
 .champions {
     display: flex;
     flex-direction: column;
+} */
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
+ .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: x-small;
+    border-left: 1px solid black;
+    /* font-weight: bold; */
+    padding: 4px;
+    border-bottom: 1px solid black;
+
+ }
+
+ .row1{
+    font-weight: bold;
+ }
+
+
+ .cover {
+    position: sticky;
+    top: 0;
+    background-color: black;
+    color : white;
+ }
